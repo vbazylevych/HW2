@@ -1,4 +1,5 @@
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -55,14 +56,15 @@ public class GetTopWordsMethodTest {
         assertEquals(result, expectedResult);
     }
 
-    @Test
+    @Test(expected =  IndexOutOfBoundsException.class)
     public void methodReturnsEmptyArrayIfTextIsEmpty() {
 
         Text text = new Text("");
         String[] result = text.getTopWords(3);
         String[] expectedResult = {};
 
-        assertEquals(result, expectedResult);
+
+
     }
 
 
